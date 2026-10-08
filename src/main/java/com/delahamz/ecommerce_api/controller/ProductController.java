@@ -1,7 +1,9 @@
 package com.delahamz.ecommerce_api.controller;
 
-import com.delahamz.ecommerce_api.entity.Product;
+import com.delahamz.ecommerce_api.dto.ProductRequestDTO;
+import com.delahamz.ecommerce_api.dto.ProductResponseDTO;
 import com.delahamz.ecommerce_api.service.ProductService;
+import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -18,22 +20,20 @@ public class ProductController  {
 
     //GET /api/products : collect all products
     @GetMapping
-    public ResponseEntity<List<Product>> getAllProducts() {
-        List<Product> products = productService.getAllProducts();
-        return ResponseEntity.ok(products);//200 http's code ok
+    public ResponseEntity<List<ProductResponseDTO>> getAllProducts() {
+        return ResponseEntity.ok(productService.getAllProducts());//200 http's code ok
     }
 
     //GET /api/products/{id} : collect a product by id
     @GetMapping("/{id}")
-    public ResponseEntity<Product> getProductById(@PathVariable Long id) {
-        Product product = productService.getProductById(id);
-        return ResponseEntity.ok(product);
+    public ResponseEntity<ProductResponseDTO> getProductById(@PathVariable Long id) {
+        return ResponseEntity.ok(productService.getProductById(id));
     }
 
     //POST /api/products : create a new product
     @PostMapping
-    public ResponseEntity<Product> createProduct(@RequestBody Product product) {
-        Product createProduct = productService.createProduct(product);
+    public ResponseEntity<ProductResponseDTO> createProduct(@Valid @RequestBody ProductRequestDTO requestDTO) {
+        ProductResponseDTO createProduct = productService.createProduct(requestDTO);
         return new ResponseEntity<>(createProduct, HttpStatus.CREATED);//201 http's code created
     }
 
