@@ -8,9 +8,11 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import io.swagger.v3.oas.annotations.tags.Tag;
 
 import java.util.List;
 
+@Tag(name="Commandes",description="Passage de commandes multi-articles et gestion des transactions")
 @RestController
 @RequestMapping("/api/orders")
 @RequiredArgsConstructor
