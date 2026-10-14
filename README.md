@@ -5,7 +5,6 @@ API RESTful développée en Java 17 avec le framework Spring Boot 3, dédiée à
 ---
 
 ## Fonctionnalités clés
-
 - **Architecture N-Tier (4 couches)** : Découpage strict en `Controller`, `Service`, `Repository`, `Entity`/`DTO`.
 - **Catalogue Produits** : Opérations CRUD complètes avec validation des données entrantes (`Jakarta Validation`).
 - **Passage de Commandes Multi-articles** :
@@ -18,7 +17,6 @@ API RESTful développée en Java 17 avec le framework Spring Boot 3, dédiée à
 ---
 
 ## Stack Technique
-
 - **Langage** : Java 17
 - **Framework** : Spring Boot 3
 - **Persistance** : Spring Data JPA, Hibernate
@@ -29,7 +27,6 @@ API RESTful développée en Java 17 avec le framework Spring Boot 3, dédiée à
 ---
 
 ## Installation et Exécution
-
 ### 1 - Prérequis
 - Java Development Kit (JDK) 17+
 - Git
